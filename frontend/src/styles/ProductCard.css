@@ -1,0 +1,89 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-elegant);
+}
+.card__media {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--secondary);
+}
+.card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  display: block;
+}
+.card:hover .card__media img { transform: scale(1.05); }
+
+.card__badge {
+  position: absolute;
+  top: 8px; left: 8px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  font-weight: 500;
+  z-index: 2;
+}
+@media (min-width: 768px) {
+  .card__badge { top: 12px; left: 12px; font-size: 0.65rem; padding: 4px 10px; }
+}
+
+.card__body { padding: 0.65rem 0.15rem 0; }
+@media (min-width: 768px) { .card__body { padding: 1rem 0.25rem 0; } }
+
+.card__cat {
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+@media (min-width: 768px) { .card__cat { font-size: 0.7rem; } }
+
+.card__name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0.2rem 0 0.35rem;
+  line-height: 1.3;
+}
+@media (min-width: 768px) { .card__name { font-size: 1.05rem; } }
+
+.card__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+.card__price {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+@media (min-width: 768px) { .card__price { font-size: 1rem; } }
+
+.card__rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.72rem;
+  color: var(--muted-foreground);
+}
+.card__rating svg { color: var(--accent); fill: var(--accent); }
+
+.card__sold {
+  font-size: 0.7rem;
+  color: var(--destructive);
+  margin-top: 0.3rem;
+  letter-spacing: 0.05em;
+}

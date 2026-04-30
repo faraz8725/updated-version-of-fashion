@@ -1,0 +1,163 @@
+/* ── Shared page header ── */
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 5rem;
+}
+@media (min-width: 768px) { .page { padding: 4rem 1.5rem 6rem; } }
+
+.page__eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.page__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 500;
+  margin: 0 0 1rem;
+  line-height: 1.1;
+}
+.page__lead {
+  color: var(--muted-foreground);
+  font-size: 1rem;
+  line-height: 1.75;
+  max-width: 640px;
+  margin-bottom: 3rem;
+}
+@media (min-width: 768px) { .page__lead { font-size: 1.05rem; } }
+
+/* ── About ── */
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+@media (min-width: 768px) { .about__grid { grid-template-columns: 1fr 1fr; gap: 3rem; } }
+
+.about__img {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--secondary);
+}
+.about__img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.about__text h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+  margin: 0 0 1rem;
+}
+.about__text p {
+  color: var(--muted-foreground);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.about__values {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+@media (min-width: 600px) { .about__values { grid-template-columns: repeat(3, 1fr); } }
+
+.about__value {
+  background: var(--secondary);
+  padding: 1.5rem;
+  text-align: center;
+}
+.about__value svg { color: var(--primary); margin-bottom: 0.75rem; }
+.about__value h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0 0 0.4rem;
+}
+.about__value p { color: var(--muted-foreground); font-size: 0.88rem; line-height: 1.6; margin: 0; }
+
+/* ── Contact ── */
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+@media (min-width: 768px) { .contact__grid { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+
+.contact__info h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0 0 1rem;
+}
+.contact__info p {
+  color: var(--muted-foreground);
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+.contact__detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.92rem;
+}
+.contact__detail svg { color: var(--primary); flex-shrink: 0; margin-top: 2px; }
+
+.contact__form { display: grid; gap: 1rem; }
+.contact__field label {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+.contact__field input,
+.contact__field textarea {
+  width: 100%;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--border);
+  background: var(--background);
+  font-size: 0.92rem;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+.contact__field textarea { min-height: 130px; resize: vertical; }
+.contact__field input:focus,
+.contact__field textarea:focus { border-color: var(--primary); }
+
+.contact__submit {
+  padding: 0.95rem 2rem;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border: none;
+  cursor: pointer;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: inherit;
+  transition: background 0.3s;
+  width: 100%;
+}
+@media (min-width: 480px) { .contact__submit { width: auto; } }
+.contact__submit:hover { background: var(--primary-glow); }
+.contact__submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.contact__success {
+  background: hsl(142 60% 40% / 0.1);
+  border: 1px solid hsl(142 60% 40% / 0.3);
+  color: hsl(142 60% 30%);
+  padding: 0.8rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 2px;
+}

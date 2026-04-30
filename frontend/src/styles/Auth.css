@@ -1,0 +1,109 @@
+.auth {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.auth__card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 2rem 1.5rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: var(--shadow-soft);
+}
+@media (min-width: 480px) { .auth__card { padding: 2.5rem 2rem; } }
+
+.auth__eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.auth__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  font-weight: 500;
+  margin: 0 0 0.4rem;
+}
+
+.auth__sub {
+  color: var(--muted-foreground);
+  font-size: 0.9rem;
+  margin-bottom: 1.75rem;
+}
+
+.auth__form { display: grid; gap: 1rem; }
+
+.auth__field label {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+.auth__field input {
+  width: 100%;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--border);
+  background: var(--background);
+  font-size: 0.95rem;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+.auth__field input:focus { border-color: var(--primary); }
+.auth__field input.error { border-color: var(--destructive); }
+
+.auth__fieldError {
+  font-size: 0.78rem;
+  color: var(--destructive);
+  margin-top: 0.3rem;
+}
+
+.auth__error {
+  background: hsl(0 70% 42% / 0.08);
+  border: 1px solid hsl(0 70% 42% / 0.25);
+  color: var(--destructive);
+  padding: 0.7rem 0.9rem;
+  font-size: 0.88rem;
+  border-radius: 2px;
+}
+
+.auth__submit {
+  width: 100%;
+  padding: 0.95rem;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border: none;
+  cursor: pointer;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: inherit;
+  transition: background 0.3s;
+  margin-top: 0.25rem;
+}
+.auth__submit:hover { background: var(--primary-glow); }
+.auth__submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.auth__footer {
+  text-align: center;
+  margin-top: 1.25rem;
+  font-size: 0.88rem;
+  color: var(--muted-foreground);
+}
+.auth__footer a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+.auth__footer a:hover { text-decoration: underline; }

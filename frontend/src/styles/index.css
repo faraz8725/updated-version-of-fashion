@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+:root {
+  --background: hsl(36, 33%, 97%);
+  --foreground: hsl(0, 25%, 12%);
+  --card: hsl(36, 40%, 99%);
+  --primary: hsl(348, 55%, 28%);
+  --primary-foreground: hsl(36, 40%, 98%);
+  --primary-glow: hsl(348, 55%, 40%);
+  --secondary: hsl(36, 38%, 92%);
+  --secondary-foreground: hsl(0, 25%, 14%);
+  --muted: hsl(36, 25%, 90%);
+  --muted-foreground: hsl(25, 10%, 38%);
+  --accent: hsl(38, 55%, 52%);
+  --accent-foreground: hsl(36, 40%, 98%);
+  --destructive: hsl(0, 70%, 42%);
+  --border: hsl(36, 25%, 86%);
+  --shadow-soft: 0 4px 24px -8px hsl(348 30% 20% / 0.12);
+  --shadow-elegant: 0 20px 60px -20px hsl(348 40% 18% / 0.25);
+  --transition-elegant: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-width: 320px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a { color: inherit; }
+button { font-family: inherit; }
+input, select, textarea { font-family: inherit; }
+
+/* Remove tap highlight on mobile */
+a, button { -webkit-tap-highlight-color: transparent; }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
