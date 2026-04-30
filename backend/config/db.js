@@ -6,7 +6,7 @@ const connectDB = async () => {
   console.log("DB Name:", mongoose.connection.name);
 };
 
-module.exports = connectDB; */
+module.exports = connectDB; *
 
 const mongoose = require("mongoose");
 
@@ -18,6 +18,28 @@ const connectDB = async () => {
   } catch (error) {
     console.error("MongoDB connection error:", error.message);
     process.exit(1); // ❌ crash karta hai
+  }
+};
+
+module.exports = connectDB; */
+
+const mongoose = require("mongoose");
+
+const connectDB = async () => {
+  try {
+    const conn = await mongoose.connect(process.env.MONGO_URI, {
+      serverSelectionTimeoutMS: 5000, // prevent long hang
+    });
+
+    console.log(`MongoDB connected: ${conn.connection.host}`);
+  } catch (error) {
+    console.error("MongoDB connection error:", error.message);
+
+    // ❌ DON'T crash server
+    // process.exit(1);
+
+    // ✅ instead retry connection
+    setTimeout(connectDB, 5000);
   }
 };
 
