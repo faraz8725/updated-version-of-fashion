@@ -15,11 +15,10 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://updated-version-of-fashion.vercel.app/"
+    "https://updated-version-of-fashion.vercel.app"
   ],
   credentials: true
 }));
-
 
 app.use(express.json());
 
