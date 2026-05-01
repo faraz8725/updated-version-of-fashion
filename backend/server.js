@@ -14,7 +14,7 @@ connectDB();
 
 /* ✅ CORS */
 app.use(cors({
-  origin: "https://updated-version-of-fashion.vercel.app/",
+  origin: "https://updated-version-of-fashion.vercel.app",
   credentials: true
 }));
 
