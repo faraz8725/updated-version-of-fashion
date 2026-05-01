@@ -12,14 +12,32 @@ const app = express();
 /* ✅ Connect DB */
 connectDB();
 
-/* ✅ CORS */
-app.use(cors({
-  origin: "https://updated-version-of-fashion.vercel.app",
-  credentials: true
-}));
+/* ✅ Allowed Origins */
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://updated-version-of-fashion.vercel.app"
+];
 
-/* ✅ Preflight */
-app.options("*", cors());
+/* ✅ CORS CONFIG (FINAL FIX) */
+const corsOptions = {
+  origin: function (origin, callback) {
+    console.log("Request Origin:", origin); // debug
+
+    // allow requests with no origin (like mobile apps, postman)
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("CORS not allowed"));
+    }
+  },
+  credentials: true,
+};
+
+/* ✅ Apply CORS */
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 
 /* ✅ Middleware */
 app.use(express.json());
