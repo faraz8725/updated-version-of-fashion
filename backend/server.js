@@ -14,7 +14,7 @@ connectDB();
 
 /* ✅ CORS */
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: "https://updated-version-of-fashion.vercel.app/",
   credentials: true
 }));
 
